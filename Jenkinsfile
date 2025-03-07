@@ -7,13 +7,13 @@ pipeline {
         EC2_USER = 'ubuntu'
         SSH_KEY_CREDENTIAL_ID = 'aws-ec2-ssh-key'
         APP_DIR = '/home/ubuntu'
-        JAR_NAME = 'RAG4j-0.0.1-SNAPSHOT.jar'
+        JAR_NAME = 'jenkins-demo-0.0.1-SNAPSHOT.jar'
         EC2_DOMAIN = credentials('ec2-public-domain')
     }
     stages {
         stage('Checkout Code') {
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/thinhtran383/RAG4j']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/thinhtran383/demo-jenkins']])
             }
         }
         stage('Build Maven Project') {
