@@ -11,6 +11,6 @@ public class HomeController {
 
     @GetMapping
     public ResponseEntity<?> sayHello() {
-        return ResponseEntity.ok("Hello Jenkins v1");
+        return ResponseEntity.ok("Hello Jenkins");
     }
 }
